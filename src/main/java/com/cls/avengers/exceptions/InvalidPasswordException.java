@@ -1,15 +1,13 @@
 package com.cls.avengers.exceptions;
 
-import lombok.Getter;
 import org.zalando.problem.AbstractThrowableProblem;
+import org.zalando.problem.Status;
 
-/**
- * Thrown to indicate that a method has been passed an illegal or inappropriate argument.
- */
-@Getter
-public class IllegalArgumentException extends AbstractThrowableProblem {
+public class InvalidPasswordException extends AbstractThrowableProblem {
 
     private final String errorCode;
+
+    private static final long serialVersionUID = 1L;
 
 
     /**
@@ -18,9 +16,14 @@ public class IllegalArgumentException extends AbstractThrowableProblem {
      * @param message   Message
      * @param errorCode error code
      */
-    public IllegalArgumentException(String message, String errorCode) {
+    public InvalidPasswordException(String message, String errorCode) {
         super(null, message);
         this.errorCode = errorCode;
+    }
+
+    public InvalidPasswordException() {
+        super(ErrorConstants.INVALID_PASSWORD_TYPE, "Sai mật khẩu", Status.BAD_REQUEST);
+        this.errorCode = null;
     }
 
     /**
@@ -30,7 +33,7 @@ public class IllegalArgumentException extends AbstractThrowableProblem {
      * @param errorCode error code
      * @param exception Exception Object
      */
-    public IllegalArgumentException(String message, String errorCode, Exception exception) {
+    public InvalidPasswordException(String message, String errorCode, Exception exception) {
         super(null, message);
         this.errorCode = errorCode;
     }

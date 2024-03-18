@@ -17,9 +17,6 @@ public enum ErrorCode {
     /** Invalid model */
     INVALID_MODEL,
 
-    /** Item already exists */
-    ITEM_ALREADY_EXISTS,
-
     /** Not found */
     NOT_FOUND,
 
@@ -33,5 +30,14 @@ public enum ErrorCode {
     STAFF_ALREADY_EXISTS,
 
     /** Store already exists */
-    STORE_ALREADY_EXISTS;
+    STORE_ALREADY_EXISTS,
+
+    /** Email already exists */
+    EMAIL_ALREADY_EXISTS,
+
+    /** Phone number already exists */
+    PHONE_NUMBER_ALREADY_EXISTS,
+
+    /** Username already exists */
+    USERNAME_ALREADY_EXISTS;
 }
